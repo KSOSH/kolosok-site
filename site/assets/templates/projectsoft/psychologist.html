@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	<body>{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		<div class="section container">
+			{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			<div class="row">
+				<div class="director">
+					<div class="column sidebar all">{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}</div>
+				</div>
+			</div>
+			<div class="row">[[DLCrumbs &showCurrent=`1`]]</div>
+			<div class="row">
+				<div class="container-fluid">
+					<h1>[*pagetitle*]</h1>
+					<div class="content hyphenation">[*content*]</div>
+				</div>
+			</div>
+			<div id="page">
+				[[DLMenu?
+					&parents=`[*id*]`
+					&maxDepth=`1`
+					&outerTpl=`@CODE: [+wrap+] `
+					&rowTpl=`@CODE: <h3 class="text-center news-title">[+title+]</h3>[+news_content+]`
+					&urlScheme=`full`
+					&prepare=`\ProjectSoft\PrepareDL::prepareDLMenu`
+					&rowClass=``
+					&firstClass=``
+					&lastClass=``
+					&levelClass=``
+					&webLinkClass=``
+					&parentClass=``
+					&hereClass=``
+					&activeClass=``
+					&oddClass=``
+					&evenClass=``
+				]]
+			</div>{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		</div>{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}
+	</body>
+</html>

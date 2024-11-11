@@ -1,0 +1,37 @@
+/* Univers */
+.univers {
+	&-wrapper {
+		padding-bottom: 2em;
+		margin-bottom: 3em;
+		margin-top: 3em;
+		.univers-slick {
+			white-space: nowrap;
+			overflow: hidden;
+			&.slick-initialized {
+				overflow: initial;
+			}
+		}
+	}
+	&-slick {
+		&.slick-initialized {
+			.univers-slick-item {
+				display: block !important;
+				img {
+					display: block;
+					object-position: center;
+					object-fit: contain;
+					width: 100%;
+				}
+				a {
+					display: block;
+				}
+			}
+		}
+		&-item {
+			display: inline-block;
+			a {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	|{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	body
+		|{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		.section.container
+			|{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/slider_growing_point.html}}
+			.row
+				.director
+					.column.sidebar.all
+						|{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}
+			.row
+				|[[DLCrumbs &showCurrent=`1`]]
+			.row
+				.container-fluid
+					h1
+						|[*pagetitle*]
+					.content.hyphenation
+						|[*content*]
+					.content.hyphenation
+						|[[PageBuilder]]
+			|[[DocLister?
+			|   &parents=`157`
+			|   &display=`5`
+			|   &tvList=`imageSoc, news_date`
+			|   &tvPrefix=``
+			|   &orderBy=`news_date DESC`
+			|   &sortBy=`news_date`
+			|   &sortDir=`DESC`
+			|   &tvSortType=`TVDATETIME`
+			|   &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+			|   &noneTPL=``
+			|   &ownerTPL=`@CODE: <div class="row"><h2 class="news-title text-center container-fluid">Новости «ТОЧКА РОСТА»</h2><div class="container-fluid content news hyphenation">[+dl.wrap+]</div></div>`
+			|   &tpl=`@FILE:projectsoft/tpl/news_tpl`
+			|   &showParent=`0`
+			|   &urlScheme=`full`
+			|   &noneWrapOuter=`0`
+			|]]
+			.row#page
+				.container-fluid
+					p.text-center
+						a.btn.btn-any(href="[(site_url)][~157~]")
+							|Все новости
+			|{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}

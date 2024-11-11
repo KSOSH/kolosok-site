@@ -1,0 +1,35 @@
+
+<div class="row">
+	<div class="director">
+		<div class="column sidebar">{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}</div>
+		<div class="column contact">
+			<p class="title"><strong>[(director_position)]:</strong></p>
+			<p class="name"><strong>[(director)]</strong></p>
+			<dl>
+				<dt>Адрес:</dt>
+				<dd><span class="icon-home"></span>
+					<p>[(address)]</p>
+				</dd>
+				<dt>Телефон:</dt>
+				<dd><span class="icon-phone"></span>
+					<p>[(phones:nl2br)]</p>
+				</dd>
+				<dt>Электронный адрес:</dt>
+				<dd><span class="icon-email"></span>
+					<p><a href="mailto:[(email)]" target="_blank">[(email)]</a></p>
+				</dd>
+				<dt>Сайт:</dt>
+				<dd>
+					[[multiTV? 
+					 &fromJson=`[(siteschool)]` 
+					 &tvName=`siteschool`
+					 &display=`all`
+					]]
+				</dd>
+			</dl>
+		</div>
+		<div class="column photo">
+			<p><img src="[[thumb? &input=`[(director_photo)]` &options=`w=485,h=500,zc=C`]]" alt="[(director)]"/></p>
+		</div>
+	</div>
+</div>

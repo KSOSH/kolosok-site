@@ -1,0 +1,27 @@
+/* Sites */
+.sites {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 4.5em;
+	margin-bottom: 3em;
+	.sites-link {
+		width: 230px;
+		margin-bottom: 30px;
+		img {
+			box-shadow: 0 0 1px #000, 0 0 0 #ccc;
+			transition: all .4s ease;
+			transform: scale(1);
+		}
+		a {
+			display: block;
+			&:hover {
+				img {
+					box-shadow: 0 0 1px #000, 0 0 10px #ddd;
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}

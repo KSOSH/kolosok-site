@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	<body>{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		<div class="section container">
+			{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			{{@FILE assets/templates/projectsoft/tpl/slider_growing_point.html}}
+			<div class="row">
+				<div class="director">
+					<div class="column sidebar all">{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}</div>
+				</div>
+			</div>
+			<div class="row">[[DLCrumbs &showCurrent=`1`]]</div>
+			<div class="row">
+				<div class="container-fluid">
+					<h1>[*pagetitle*]</h1>
+					<div class="content hyphenation">[*content*]</div>
+					<div class="content hyphenation">[[PageBuilder]]</div>
+				</div>
+			</div>[[DocLister?
+			  &parents=`157`
+			  &display=`5`
+			  &tvList=`imageSoc, news_date`
+			  &tvPrefix=``
+			  &orderBy=`news_date DESC`
+			  &sortBy=`news_date`
+			  &sortDir=`DESC`
+			  &tvSortType=`TVDATETIME`
+			  &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+			  &noneTPL=``
+			  &ownerTPL=`@CODE: <div class="row"><h2 class="news-title text-center container-fluid">Новости «ТОЧКА РОСТА»</h2><div class="container-fluid content news hyphenation">[+dl.wrap+]</div></div>`
+			  &tpl=`@FILE:projectsoft/tpl/news_tpl`
+			  &showParent=`0`
+			  &urlScheme=`full`
+			  &noneWrapOuter=`0`
+			]]
+			<div class="row" id="page">
+				<div class="container-fluid">
+					<p class="text-center"><a class="btn btn-any" href="[(site_url)][~157~]">Все новости</a></p>
+				</div>
+			</div>{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		</div>{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}
+	</body>
+</html>

@@ -1,0 +1,50 @@
+.methodical {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	&-container {
+		width: 25%;
+		padding-left: @padding;
+		padding-right: @padding;
+		margin-top: @padding;
+		margin-bottom: @padding;
+		&-item {
+			margin-bottom: 0;
+			> a {
+				display: block;
+				img {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					transition: transform .3s ease;
+					transform-origin: center center;
+					transform: scale(1.0);
+				}
+				> span {
+					display: block;
+					text-align: center;
+					overflow: hidden;
+					width: 100%;
+					&:first-child {
+						box-shadow: 0 0 1px black;
+					}
+				}
+				&:hover {
+					img {
+						transform: scale(1.3);
+					}
+				}
+			}
+		}
+		@media(max-width: 991px){
+			width: percentage(0.3333333333333333);
+		}
+		@media(max-width: 801px){
+			width: percentage(0.5);
+		}
+		@media(max-width: 621px){
+			width: percentage(1);
+		}
+	}
+}

@@ -1,0 +1,25 @@
+ul, ol {
+	margin-top: 0;
+	margin-bottom: .8em;
+	&,
+	ul,
+	ol {
+		> li {
+			margin-bottom: 0.8em;
+		}
+	}
+	&.list-content {
+		&,
+		ul,
+		ol
+		> li {
+			margin-bottom: 0;
+		}
+	}
+}
+ul {
+	&,
+	ul {
+		list-style-type: disc;
+	}
+}

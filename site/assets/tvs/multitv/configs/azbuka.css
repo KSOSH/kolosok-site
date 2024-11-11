@@ -1,0 +1,216 @@
+.azbuka {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.azbuka--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.azbuka--item--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.azbuka--item--block {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.azbuka--item--image,
+.azbuka--item--description {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.azbuka--item--image {
+  margin-bottom: 1em;
+}
+.azbuka--item--image-responsive {
+  max-width: 90px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 399px) {
+  .azbuka--item--image-responsive {
+    text-align: center;
+  }
+}
+.azbuka--item--description--wrapp {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+.azbuka--item--description--button {
+  margin-top: 15px;
+  text-align: right;
+}
+.azbuka--item--title {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.azbuka--item--title .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 0.6em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.azbuka--item--title .title span {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.azbuka--item--title .title .time {
+  font-size: 0.7em;
+  margin-top: 0.2em;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 105px;
+      flex-basis: 105px;
+}
+.azbuka--item--title .title .link {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1.2em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+}
+.azbuka--item--title .title .icon-event-calendar {
+  display: inline-block;
+  margin-right: 0.3em;
+  font-size: 1.5em;
+}
+@media (max-width: 400px) {
+  .azbuka--item--title .title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .azbuka--item--title .title .link {
+    margin-bottom: 0.2em;
+  }
+  .azbuka--item--title .title .time {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .azbuka--item--title .title .link,
+  .azbuka--item--title .title .time {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+  }
+}
+.azbuka--item--description {
+  margin-bottom: 2em;
+}
+@media (min-width: 400px) {
+  .azbuka--item {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    margin-bottom: 1em;
+    -webkit-transition: -webkit-box-shadow 0.3s ease;
+    transition: -webkit-box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+    -webkit-box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0), inset 0 0 1px 0 rgba(0, 0, 0, 0.33);
+            box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0), inset 0 0 1px 0 rgba(0, 0, 0, 0.33);
+  }
+  .azbuka--item:hover {
+    -webkit-box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.07), inset 0 0 1px 0 rgba(0, 0, 0, 0.33);
+            box-shadow: 0 0.25em 1em rgba(0, 0, 0, 0.07), inset 0 0 1px 0 rgba(0, 0, 0, 0.33);
+  }
+  .azbuka--item--image,
+  .azbuka--item--description {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 0.7em;
+  }
+  .azbuka--item--block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding-bottom: 5px;
+  }
+  .azbuka--item--image {
+    padding-left: unset;
+    -ms-flex-preferred-size: 90px;
+        flex-basis: 90px;
+  }
+  .azbuka--item--image img {
+    width: 100%;
+  }
+  .azbuka--item--description {
+    padding-right: unset;
+    -ms-flex-preferred-size: calc(100% - 90px);
+        flex-basis: calc(100% - 90px);
+  }
+}

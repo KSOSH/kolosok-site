@@ -1,0 +1,9 @@
+footer.pageprint
+	table.pageprint--table
+		tr
+			td.col--left
+				|[!$_SERVER['REQUEST_TIME']:dateFormat='d.m.Y'!]</td>
+			td.col--center
+				|[(site_name)] &copy; 1934 - [!$_SERVER['REQUEST_TIME']:dateFormat='Y'!]
+			td.col--right
+				|{PAGENO}/{nbpg}

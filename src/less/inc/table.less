@@ -1,0 +1,26 @@
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	&,
+	&.table-bordered,
+	&.border-collapse,
+	&.table-striped,
+	&.table-hover {
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 20px;
+		> thead,
+		> tbody,
+		> tfoot {
+			> tr {
+				> th,
+				> td {
+					padding: 8px;
+					line-height: 1.42857143;
+					vertical-align: top;
+					text-align: left;
+				}
+			}
+		}
+	}
+}

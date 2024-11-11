@@ -1,0 +1,35 @@
+.flex {
+	display: flex;
+	&-row {
+		flex-direction: row;
+		&-center {
+			justify-content: center;
+		}
+	}
+	&-wrap {
+		flex-wrap: wrap;
+	}
+	&-nowrap {
+		flex-wrap: nowrap;
+	}
+	&-column {
+		flex-direction: column;
+	}
+	&-item {
+		&-row {
+			padding-left: 15px;
+			padding-right: 15px;
+			margin-bottom: .8em;
+		}
+	}
+	&-justify-center {
+		justify-content: center;
+	}
+	&-align-center {
+		align-items: center;
+	}
+}
+.col {
+	padding-left: 15px;
+	padding-right: 15px;
+}

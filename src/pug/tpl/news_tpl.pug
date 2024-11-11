@@ -1,0 +1,21 @@
+.news-container
+	.news-container-item
+		h4.title
+			|<a class="hyphenation" href="[+url+]" [+link_attributes+]>
+			|	[+title+]
+			|</a>
+		p.date.text-right
+			span.icon-calendar
+			span
+				|[+out_date+]
+		.news-container-item-description
+			p.photo
+				|<a href="[+url+]" [+link_attributes+]>
+				|	<img src="[[thumb? &input=`[+imageSoc+]` &options=`w=751,h=422,zc=C`]]" alt="[+title:hsc+]">
+				|</a>
+			p.text
+				span.text-wrapper.hyphenation
+					|[+introtext:nl2br+]
+				|<a class="btn btn-any" href="[+url+]" [+link_attributes+]>
+				|	Подробнее
+				|</a>

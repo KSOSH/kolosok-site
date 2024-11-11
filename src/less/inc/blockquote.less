@@ -1,0 +1,32 @@
+blockquote {
+	margin: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 45px;
+	padding-right: 1em;
+	box-shadow: 0 0 1px #2d2d2d;
+	margin-bottom: 0.8em;
+	margin-top: 0.8em;
+	border-radius: 0.3em;
+	background-color: #f3f3f3;
+	font-style: italic;
+	position: relative;
+	min-height: 54px;
+	&::before {
+		position: absolute;
+		font-family:"IconsSite";
+		font-weight:normal;
+		font-style:normal;
+		font-display: swap;
+		content: @icon-blockquote;
+		color: #bbb;
+		left: 10px;
+		top: 10px;
+		font-size: 31px;
+		text-shadow: 0 0 1px black;
+		line-height: 1;
+	}
+	> p:last-child {
+		margin-bottom: 0;
+	}
+}

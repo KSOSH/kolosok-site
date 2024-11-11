@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	<body>{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		<div class="section container">
+			{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			<div class="row">
+				<div class="director">
+					<div class="column sidebar all">{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}</div>
+				</div>
+			</div>
+			<div class="row">[[DLCrumbs &showCurrent=`1`]]</div>
+			<div class="row" id="page">
+				<div class="container-fluid">
+					<h1>[[alterTitle]]</h1>
+					<div class="content hyphenation">
+						[*content*]
+						[[DLMenu?
+							&parents=`[*id*]`
+							&maxDepth=`100`
+							&outerTpl=`@CODE:<ul>[+wrap+]</ul>`
+							&rowTpl=`@CODE:<li><p><a href="[+url+]" [+link_attributes+]>[+title+]</a></p></li>`
+							&parentRowTpl=`@CODE:<li><p><a href="[+url+]">[+title+]</a></p>[+wrap+]</li>`
+							&urlScheme=`full`
+							&prepare=`\ProjectSoft\PrepareDL::prepareUrlDLMenu`
+							&rowClass=``
+							&firstClass=``
+							&lastClass=``
+							&levelClass=``
+							&webLinkClass=``
+							&parentClass=``
+							&hereClass=``
+							&activeClass=``
+							&oddClass=``
+							&evenClass=``
+						]]
+					</div>
+					<p class="text-right news_person"><strong><em>[*news_person*]</em></strong></p>
+				</div>
+			</div>{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		</div>{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}
+	</body>
+</html>

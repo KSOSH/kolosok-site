@@ -1,0 +1,27 @@
+/* Containers */
+.container,
+.container-fluid,
+.row,
+.clearfix {
+	.clearfix();
+}
+.container {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+.container {
+	&, &-fluid {
+		padding-left: @padding;
+		padding-right: @padding;
+	}
+}
+.row {
+	margin-left: -@padding;
+	margin-right: -@padding;
+}
+.column {
+	padding-left: @padding;
+	padding-right: @padding;
+}

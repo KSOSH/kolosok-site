@@ -1,0 +1,17 @@
+.dialog,
+.user-speech {
+	padding-left: 1.2em;
+	font-style: italic;
+}
+.user-speech {
+	text-indent: -1em;
+}
+.dialog {
+	position: relative;
+	&::before {
+		position: absolute;
+		left: 0.3em;
+		top: 0;
+		content: "–";
+	}
+}

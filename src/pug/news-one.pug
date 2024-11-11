@@ -1,0 +1,54 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	// НОВОСТЬ
+	|
+	|{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	body
+		|{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		.section.container
+			|{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			.row
+				.director
+					.column.sidebar.all
+						|{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}
+			.row
+				|[[DLCrumbs &showCurrent=`1`]]
+			.row#page
+				.container-fluid
+					h1
+						|[[alterTitle]]
+					p.text-right.news_date
+						strong
+							em
+								|[[dateRus? &time=`[*news_date*]`]]
+					.content.hyphenation
+						|[*content*]
+						|[[multiTV?
+						|    &tvName=`distfiles`
+						|    &docid=`[*id*]`
+						|    &display=`all`
+						|    &emptyOutput=`1`
+						|]]
+					|[[multiTV?
+					|    &tvName=`files`
+					|    &docid=`[*id*]`
+					|    &display=`all`
+					|    &emptyOutput=`1`
+					|]]
+					|[*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/rutube.html}}`*]
+					|[*youtubetv:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/outYouTube.html}}`*]
+					|[[multiTV?
+					|    &tvName=`photogallery`
+					|    &docid=`[*id*]`
+					|    &display=`all`
+					|    &emptyOutput=`1`
+					|]]
+					p.text-right.news_person
+						strong
+							em
+								|[*news_person*]
+			|{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}

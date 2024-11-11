@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+	<!-- Новость-->
+	{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	<body>{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		<div class="section container">
+			{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			<div class="row">
+				<div class="director">
+					<div class="column sidebar all">{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}</div>
+				</div>
+			</div>
+			<div class="row">[[DLCrumbs &showCurrent=`1`]]</div>
+			<div class="row" id="page">
+				<div class="container-fluid">
+					<h1>[[alterTitle]]</h1>
+					<div class="content hyphenation bvi-tts">
+						[*content*]
+						[[multiTV?
+						   &tvName=`distfiles`
+						   &docid=`[*id*]`
+						   &display=`all`
+						   &emptyOutput=`1`
+						]]
+					</div>[[multiTV?
+					   &tvName=`files`
+					   &docid=`[*id*]`
+					   &display=`all`
+					   &emptyOutput=`1`
+					]]
+					[*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/rutube.html}}`*]
+					[*youtubetv:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/outyoutube.html}}`*]
+					[[multiTV?
+					   &tvName=`photogallery`
+					   &docid=`[*id*]`
+					   &display=`all`
+					   &emptyOutput=`1`
+					]]
+					<p class="text-right news_person"><strong><em>[*news_person*]</em></strong></p>
+					<div class="groups_widgets" style="margin-bottom: 1em; display: flex; flex-direction: row; justify-content: flex-end;">
+						<div id="vk_like"></div>
+					</div>
+				</div>
+			</div>{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		</div>{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}
+	</body>
+</html>

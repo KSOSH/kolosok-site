@@ -1,0 +1,43 @@
+@one: 100%;
+@two: percentage((1 / 2));
+@three: percentage((1 / 3));
+@four: percentage((1 / 4));
+.photogallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding-top: 30px;
+	&-item {
+		width: @four;
+		margin-bottom: 30px;
+		img {
+			width: 100%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			transition: transform .3s ease;
+			transform: scale(1.0);
+		}
+		a {
+			display: block;
+			overflow: hidden;
+			width: 100%;
+			&:hover {
+				img {
+					transform: scale(1.3);
+				}
+			}
+		}
+		@media(max-width: 991px){
+			width: @three;
+		}
+		@media(max-width: 767px){
+			width: @two;
+		}
+		@media(max-width: 501px){
+			width: @one
+		}
+	}
+}

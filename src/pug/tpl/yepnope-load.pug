@@ -1,0 +1,6 @@
+script(type="text/javascript")
+	|window.HTTP_CLIENT = [!GetIP!];
+	|yepnope('assets/templates/projectsoft/js/appjs.min.js', undefined, function() {
+	|    yepnope('assets/templates/projectsoft/js/main.js?#{hash}', undefined, function() {})
+	|});
+|[!YandexMetrika!]

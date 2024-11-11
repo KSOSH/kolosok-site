@@ -1,0 +1,24 @@
+svg.svg___burger {
+  width: 30px;
+  max-height: 30px;
+  position: relative;
+  cursor: pointer !important;
+}
+
+.menu_icon_dash {
+  fill: @white;
+  transform-origin: 50% 50%;
+  opacity: 100;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.open .svg___burger_dash_top {
+  transform: translateY(16.75%) translateX(-16.9%) rotate(45deg);
+}
+.open .svg___burger_dash_bottom {
+  transform: translateY(16.75%) translateX(16.9%) rotate(135deg);
+}
+.open .svg___burger_dash_middle {
+  transform: rotate(135deg);
+  opacity: 0;
+}

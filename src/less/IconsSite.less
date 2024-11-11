@@ -1,0 +1,31 @@
+@icon-checkbox: "\e900";
+
+@font-face {
+	font-family:"IconsSite";
+	src:url("@{fontpath}/IconsSite.woff2?cd469b836e482fb7c6b72d48e9e0015f") format("woff2"),
+		url("@{fontpath}/IconsSite.woff?cd469b836e482fb7c6b72d48e9e0015f") format("woff"),
+		url("@{fontpath}/IconsSite.ttf?cd469b836e482fb7c6b72d48e9e0015f") format("truetype");
+	font-weight:normal;
+	font-style:normal;
+	font-display: swap;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	font-family: "IconsSite" !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkbox {
+	&:before {
+		content: @icon-checkbox;
+	}
+}

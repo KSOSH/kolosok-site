@@ -1,0 +1,46 @@
+name: Build and Deploy to Hosting
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Build and Deploy to Hosting'
+        required: true
+        default: 'Build and Deploy to Hosting'
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deploy to Hosting
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: ${{ secrets.DIRECTORY }}
+        local-dir: ./site/
+        state-name: .status.json
+        exclude: |
+          **/viewer/**
+          **/*.md
+    - name: Remove Status
+      uses: StephanThierry/ftp-delete-action@v2.1
+      with:
+        host: ${{ secrets.FTP_SERVER }}
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        remoteFiles: ".status.json;assets/cache/docid_*.php"
+        workingDir: ${{ secrets.DIRECTORY }}
+        ignoreSSL: 1

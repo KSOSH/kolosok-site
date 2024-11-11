@@ -1,0 +1,42 @@
+.row
+	.director
+		.column.sidebar
+			|{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}
+		.column.contact
+			p.title
+				strong
+					|[(director_position)]:
+			p.name
+				strong
+					|[(director)]
+			dl
+				dt
+					|Адрес:
+				dd
+					span.icon-home
+					p
+						|[(address)]
+				dt
+					|Телефон:
+				dd
+					span.icon-phone
+					p
+						|[(phones:nl2br)]
+				dt
+					|Электронный адрес:
+				dd
+					span.icon-email
+					p
+						a(href="mailto:[(email)]" target="_blank")
+							|[(email)]
+				dt
+					|Сайт:
+				dd
+					|[[multiTV? 
+					|  &fromJson=`[(siteschool)]` 
+					|  &tvName=`siteschool`
+					|  &display=`all`
+					|]]
+		.column.photo
+			p
+				img(src!="[[thumb? &input=`[(director_photo)]` &options=`w=485,h=500,zc=C`]]" alt="[(director)]")

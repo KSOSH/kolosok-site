@@ -1,0 +1,104 @@
+/* Nav Menu */
+.navmenu {
+	background-color: @bg-color;
+	user-select: none;
+	line-height: 1;
+	nav {
+		display: block;
+		margin: 0;
+		padding: 0;
+		.clearfix();
+	}
+	ul, ol {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		list-style: none;
+		flex: 1 0 auto;
+		padding: 0;
+		margin: 0;
+		li {
+			white-space: nowrap;
+			padding: 0;
+			margin: 0;
+			flex: auto;
+			a {
+				transition: background .3s ease, color .3s ease;
+				font-size: 1.1em;
+				display: block;
+				color: @white;
+				background-color: @bg-color;
+				text-decoration: none;
+				padding: @padding;
+				box-shadow: inset 0 0 2px @white;
+				text-align: center;
+				filter: none !important;
+				outline: none !important;
+				&:hover,
+				&.active {
+					background-color: @white;
+					color: @bg-color;
+					box-shadow: 0 0 2px @bg-color;
+				}
+			}
+			span {
+				transition: background 0.3s ease, color 0.3s ease;
+				font-size: 1.1em;
+				display: block;
+				//color: #ffffff;
+				//background-color: #0098ff;
+				text-decoration: none;
+				padding: 15px;
+				//box-shadow: inset 0 0 2px #ffffff;
+				text-align: center;
+				filter: none !important;
+				outline: none !important;
+				background-color: #ffffff;
+				color: #0098ff;
+				box-shadow: 0 0 2px #0098ff;
+			}
+			@media(max-width: 767px){
+				white-space: normal;
+				a {
+					text-align: left;
+				}
+			}
+		}
+		@media(max-width: 767px){
+			flex-direction: column;
+			flex-wrap: wrap;
+			visibility: hidden;
+			transition: height .3s ease;
+			height: 0;
+			overflow: hidden;
+			box-shadow: 0 0 2px @bg-color;
+			li {
+				white-space: wrap;
+				a {
+					text-align: left;
+				}
+			}
+			&.open {
+				visibility: visible;
+				height: auto;
+			}
+		}
+	}
+	&-button {
+		&-container {
+			display: none;
+			flex: 1 0 auto;
+			justify-content: flex-end;
+			color: @white;
+		}
+		@media(max-width: 767px){
+			&-container {
+				display: flex;
+				padding-left: @padding;
+				padding-right: @padding;
+				padding-top: @padding - 5;
+				padding-bottom: @padding - 5;
+			}
+		}
+	}
+}

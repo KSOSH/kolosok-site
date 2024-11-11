@@ -1,0 +1,27 @@
+.footer
+	.container
+		.row
+			.container-fluid.text-center
+				.flex.flex-column
+					|[[multiTV? 
+					|	&fromJson=`[(share)]` 
+					|	&tvName=`share`
+					|	&display=`all`
+					|	&noResults=``
+					|	&emptyOutput=`1`
+					|]]
+					.footer-wrapper
+						p.footer-organization
+							|[(name_org:nl2br)]
+						p.footer-cookie
+							a(href="[~189~]")
+								|Правила пользования файлов cookie
+						p.footer-rss
+							a.icon-rss(href="[(site_url)]rss.xml" target="_blank")
+						p.footer-copyright
+							|[(mini_name_org)] © [!GetTime? &input=`[(org_date)]` &format=`Y`!] - [!$_SERVER['REQUEST_TIME']:dateFormat='Y'!]
+						p.footer-develop.text-right
+							|Developed by:&nbsp;
+							a(href="https://projectsoft.ru/" target="_blank")
+								|ProjectSoft&nbsp;©&nbsp;2000 - [!$_SERVER['REQUEST_TIME']:dateFormat='Y'!]
+.fancybox__wrapper

@@ -1,0 +1,64 @@
+/* Shool */
+.school {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	p {
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+	&-logo,
+	&-name,
+	&-phones {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	&-logo,
+	&-phones {
+		width: 312px;
+	}
+	&-logo {
+		text-align: left;
+		user-select: none;
+		img {
+			cursor: pointer;
+		}
+	}
+	&-name {
+		text-align: center;
+		user-select: none;
+		font-weight: bold;
+		font-style: italic;
+		font-family: "Times New Roman";
+		font-size: 1.2em;
+	}
+	&-phones {
+		text-align: right;
+	}
+	@media(max-width: 767px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		&-logo,
+		&-phones {
+			width: auto;
+		}
+		&-logo {
+			img {
+				width: 70px;
+			}
+		}
+		&-logo {
+			order: 1;
+		}
+		&-phones {
+			order: 2;
+		}
+		&-name {
+			order: 3;
+			p {
+				margin-top: 0;
+			}
+		}
+	}
+}

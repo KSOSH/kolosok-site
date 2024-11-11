@@ -1,0 +1,68 @@
+body {
+	&.new_year {
+		position: relative;
+		> * {
+			position: relative;
+			z-index: 2;
+		}
+		.notification-form {
+			position: fixed;
+			z-index: 2000;
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			z-index: 0;
+			background-size: 55px auto;
+			background-repeat: repeat-y;
+			background-attachment: fixed;
+			width: 55px;
+		}
+		&::before {
+			left: 0;
+			background-position: top left;
+			background-image: url('@{imgpath}/left.png');
+		}
+		&::after {
+			right: 0;
+			background-position: top right;
+			background-image: url('@{imgpath}/right.png');
+		}
+		.section {
+			&.container {
+				> .row {
+					> .container-fluid {
+						> h1 {
+							padding-bottom: 26%;
+							background-position: center bottom;
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-image: url('@{imgpath}/top.png');
+						}
+					}
+				}
+			}
+		}
+		&.bvi {
+			&::before,
+			&::after {
+				display: none !important;
+			}
+			.section {
+				&.container {
+					> .row {
+						> .container-fluid {
+							> h1 {
+								padding-bottom: unset;
+								background-image: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

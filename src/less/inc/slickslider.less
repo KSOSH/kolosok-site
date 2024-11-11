@@ -1,0 +1,28 @@
+/* Slick Slider */
+.slick {
+	&-slider {
+		&.home {
+			margin-bottom: 1em;
+			margin-top: 1em;
+			overflow: hidden;
+			img {
+				display: block;
+				width: 100%;
+			}
+			@media(max-width: 991px) {
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+		}
+		&-item {
+			display: block !important;
+		}
+	}
+	&-slide {
+		&, * {
+			&:focus {
+				outline:  none !important;
+			}
+		}
+	}
+}

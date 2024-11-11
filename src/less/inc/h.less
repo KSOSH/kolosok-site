@@ -1,0 +1,59 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+strong, 
+b {
+	font-weight: 600;
+}
+h1 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	&::after {
+		content: "";
+		margin-left: 1em;
+		flex: 1;
+		box-shadow: 0 0 3px @bg-color;
+		height: 0;
+		overflow: hidden;
+		border-bottom: .5px solid @bg-color;
+		min-width: ~'calc(100% / 4)';
+		@media(max-width: 991px) {
+			min-width: unset;
+		}
+	}
+}
+h1,
+.h1 {
+	font-size: 2em;
+}
+h2,
+.h2 {
+	font-size: 1.7em;
+}
+h3,
+.h3 {
+	font-size: 1.4em;
+}
+h4,
+.h4 {
+	font-size: 1.4em;
+}
+h5,
+.h5 {
+	font-size: 1.1em;
+}
+h6,
+.h6 {
+	font-size: 1em;
+}

@@ -1,0 +1,73 @@
+* {
+	&, &::before, &::after {
+		box-sizing: border-box;
+	}
+}
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	line-height: @line-height;
+	//background-image: url("@{imgpath}/@{bgimage}");
+	//background-position: center top;
+	//background-attachment: fixed;
+	//background-repeat: repeat !important;
+	> .topmenu,
+	> .footer {
+		flex: 0 0 auto;
+		position: relative;
+		z-index: 100;
+		.clearfix();
+	}
+	> .section {
+		flex: 1 0 auto;
+		position: relative;
+		z-index: 1;
+		background-color: @white;
+		box-shadow: 0 0 10px #ccc;
+		.clearfix();
+	}
+	> .footer {
+		background-color: @bg-color;
+	}
+	&.x1 {
+		font-size: 1.1em;
+	}
+	&.x2 {
+		font-size: 1.2em;
+	}
+	&.x3 {
+		font-size: 1.3em;
+	}
+	&.x4 {
+		font-size: 1.4em;
+	}
+	&.screen {
+		&::after {
+			color: #000;
+			background-color: #fff;
+			white-space: pre;
+			content: "Пожалуйста подождите...\000A\000DГенерируется скриншот страницы...";
+			text-align: center;
+			display: flex;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: 999999999;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	@media(max-width: 975px){
+		&.x1,
+		&.x2,
+		&.x3,
+		&.x4 {
+			font-size: 1em;
+		}
+	}
+}

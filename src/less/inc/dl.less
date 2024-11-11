@@ -1,0 +1,34 @@
+dl {
+	&.dl {
+		&-horizontal {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			dt {
+				text-align: right;
+				width: 300px;
+				font-weight: 600;
+			}
+			dd {
+				width: ~'calc(100% - 300px)';
+				padding-left: 15px;
+				margin-left: unset;
+				margin-right: unset;
+			}
+			@media(max-width: 767px) {
+				display: block;
+				flex-direction: unset;
+				flex-wrap: unset;
+				dt {
+					text-align: left;
+					width: unset;
+				}
+				dd {
+					padding-left: unset;
+					width: unset;
+					margin-left: 40px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.teacher {
+	&_title{
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		font-size: 0.9em;
+		padding-top: 1.2em;
+		padding-bottom: 1.2em;
+	}
+	&_description {
+		min-width: 330px;
+		text-align: right;
+	}
+	&_image {
+		img {
+			max-width: 133px;
+		}
+	}
+	&_out {
+		text-align: right;
+	}
+	@media(max-width: 510px) {
+		&_title {
+			flex-direction: column;
+		}
+		&_image,
+		&_description {
+			min-width: 100%;
+		}
+		&_image {
+			text-align: center;
+			img {
+				max-width: 100%;
+			}
+		}
+		&_description {
+			text-align: left;
+		}
+	}
+}    

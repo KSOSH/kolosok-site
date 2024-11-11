@@ -1,0 +1,42 @@
+.text {
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&-center {
+		text-align: center;
+	}
+	&-justify {
+		text-align: justify;
+	}
+	&-italic {
+		font-style: italic;
+	}
+	&-bold {
+		&,
+		&-italic{
+			font-weight: 600;
+		}
+		&-italic {
+			font-style: italic;
+		}
+	}
+}
+strong,
+em {
+	font-weight: 600;	
+}
+p {
+	margin-top: 0;
+	margin-bottom: 0.8em;
+}
+a {
+	&, &:focus, &:active, &:visited {
+		color: @link;
+	}
+    &:hover {
+    	color: @link-hover;
+    }
+}

@@ -1,0 +1,31 @@
+.paginate,
+.pagination {
+	user-select: none !important;
+}
+.pagination {
+	>li {
+		font-family: 'Abel', sans-serif;
+		a,
+		span {
+			transition: all .3s ease;
+			&:focus,
+			&:hover {
+				background-color: @link-hover;
+				border-color: @link-hover;
+				color: @white;
+			}
+		}
+	}
+	>.active {
+		>span,
+		>a {
+			&,
+			&:focus,
+			&:hover {
+				background-color: @link;
+				border-color: @link;
+				color: @white;
+			}
+		}
+	}
+}

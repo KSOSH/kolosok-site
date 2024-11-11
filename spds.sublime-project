@@ -1,0 +1,22 @@
+{
+	"folders":
+	[
+		{
+			"name": "Сайт СПДС «Колосок» ГБОУ СОШ пос. Комсомольский",
+			"path": "."
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Build Project",
+			"working_dir": "$project_path",
+			"shell_cmd": "grunt -v speed && echo Finish Build Project",
+			"file_patterns": [
+				"*.less",
+				"*.js",
+				"*.pug"
+			]
+		}
+	]
+}

@@ -1,0 +1,48 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	|{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	body
+		|{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		.section.container
+			|{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/slider_9may.html}}
+			.row
+				.director
+					.column.sidebar.all
+						|{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}
+			.row
+				|[[DLCrumbs &showCurrent=`1`]]
+			.row
+				.container-fluid
+					h1
+						|[*pagetitle*]
+					.content.hyphenation
+						|[*content*]
+			#page
+				|[[DocLister?
+				|   &parents=`170`
+				|   &display=`5`
+				|   &tvList=`imageSoc, news_date`
+				|   &tvPrefix=``
+				|   &orderBy=`news_date DESC`
+				|   &sortBy=`news_date`
+				|   &sortDir=`DESC`
+				|   &tvSortType=`TVDATETIME`
+				|   &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+				|   &noneTPL=``
+				|   &ownerTPL=`@FILE:projectsoft/tpl/news`
+				|   &tpl=`@FILE:projectsoft/tpl/news_tpl`
+				|   &showParent=`0`
+				|   &urlScheme=`full`
+				|   &noneWrapOuter=`0`
+				|]]
+				.row
+					.container-fluid
+						p.text-center
+							a.btn.btn-any(href="[(site_url)][~170~]")
+								|Все новости
+			|{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}

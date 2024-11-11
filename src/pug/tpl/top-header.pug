@@ -1,0 +1,12 @@
+.row.relative
+	include eye_panel.pug
+	.school
+		.school-logo
+			p
+				img(src!="[[thumb? &input=`[(logotip)]` &options=`w=210,h=210,zc=C`]]" alt="[(name_org:hsc)]")
+		.school-name
+			p
+				|[(name_org:nl2br)]
+		.school-phones
+			p#orgPhones
+				|[(phones:nl2br)]

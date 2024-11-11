@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+	<!-- Главная-->
+	{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	<body>{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		<div class="section container">
+			{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			{{@FILE assets/templates/projectsoft/tpl/slider.html}}
+			{{@FILE assets/templates/projectsoft/tpl/director.html}}
+			<div class="row">
+				<div class="container-fluid content hyphenation">[*content*]</div>
+			</div>
+			<div id="page">
+				[[DocLister?
+				  &parents=`2`
+				  &display=`5`
+				  &tvList=`imageSoc, news_date`
+				  &tvPrefix=``
+				  &orderBy=`news_date DESC`
+				  &sortBy=`news_date`
+				  &sortDir=`DESC`
+				  &tvSortType=`TVDATETIME`
+				  &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+				  &noneTPL=`@CODE:<span></span>`
+				  &ownerTPL=`@FILE:projectsoft/tpl/home_news`
+				  &tpl=`@FILE:projectsoft/tpl/news_tpl`
+				  &showParent=`0`
+				  &urlScheme=`full`
+					&noneWrapOuter=`0`
+				]]
+			</div>{{@FILE assets/templates/projectsoft/tpl/univers.html}}
+			{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		</div>{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}
+	</body>
+</html>

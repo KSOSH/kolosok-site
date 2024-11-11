@@ -1,0 +1,78 @@
+/* Buttons */
+*,
+a,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+	&.btn {
+		display: inline-block;
+		padding-left: 1em;
+		padding-right: 1em;
+		background-color: @bg-color;
+		padding-top: .8em;
+		padding-bottom: .8em;
+		color: @white;
+		text-decoration: none;
+		box-shadow: 0 0 2px @bg-color;
+		transition: all .5s ease;
+		border: none;
+		appearance: none;
+		outline: none !important;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: @white;
+			color: @bg-color;
+			text-decoration: none;
+			box-shadow: 0 0 2px @bg-color;
+		}
+		&-any {
+			position:relative;
+			overflow: hidden;
+			> span {
+				display: inline-block;
+				opacity: 0;
+				transform: translate3d(0, -1.7em, 0);
+				transition: transform .5s, opacity .3s;
+				transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+					each(range(1, 40, 1), {
+						&:nth-child(@{value}) {
+							transition-delay: (@value * 0.015s), .3s;
+						}
+					});
+			}
+			&::before {
+				content: attr(data-before);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				transition: transform 1s, opacity .3s;
+				transition-timing-function: cubic-bezier(.75, 0, .125, 1);
+			}
+			&:focus,
+			&:hover{
+				&::before {
+					opacity: 0;
+					transition: transform .5s, opacity .3s;
+					transform: translate3d(0,100%,0);
+				}
+				> span {
+					opacity: 1;
+					color: #0098ff;
+					transform: translate3d(0,0,0);
+					each(range(1, 40, 1), {
+						&:nth-child(@{value}) {
+							transition-delay: (@value * 0.015s);
+						}
+					});
+				}
+			}
+		}
+	}
+}

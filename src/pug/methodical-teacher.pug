@@ -1,0 +1,59 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	// Учитель Уроки
+	|
+	|{{@FILE assets/templates/projectsoft/tpl/head.html}}
+	body
+		|{{@FILE assets/templates/projectsoft/tpl/topmenu.html}}
+		.section.container
+			|{{@FILE assets/templates/projectsoft/tpl/top-header.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/global-menu.html}}
+			.row
+				.director
+					.column.sidebar.all
+						|{{@FILE assets/templates/projectsoft/tpl/sidebar.html}}
+			.row
+				|[[DLCrumbs &showCurrent=`1`]]
+			.row
+				.container-fluid
+					h1
+						|[[alterTitle]]
+					p.text-right.news_date
+						strong
+							em
+					.content.hyphenation
+						|[*content*]
+			#page
+				|[[DocLister?
+				|   &parents=`[*id*]`
+				|   &display=`12`
+				|   &tvList=`imageSoc, news_date`
+				|   &tvPrefix=``
+				|   &orderBy=`news_date DESC`
+				|   &sortBy=`news_date`
+				|   &sortDir=`DESC`
+				|   &tvSortType=`TVDATETIME`
+				|   &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+				|   &noneTPL=``
+				|   &ownerTPL=`@FILE:projectsoft/tpl/methodical`
+				|   &tpl=`@FILE:projectsoft/tpl/methodical_tpl`
+				|   &showParent=`0`
+				|   &urlScheme=`full`
+				|   &noneWrapOuter=`0`
+				|   &PrevNextAlwaysShow=`1`
+				|   &paginate=`pages`
+				|   &paginationMeta=`1`
+				|   &TplWrapPaginate=`@CODE: <div class="paginate text-center"><ul class="pagination pagination--list">[+wrap+]</ul></div>`
+				|   &TplNextP=`@CODE: <li class="pagination--list--item next"><a role="button" class="icon-next" href="[+link+]"></a></li>`
+				|   &TplNextI=`@CODE: <li class="pagination--list--item next disabled"><span role="button" class="icon-next"></span></li>`
+				|   &TplPrevP=`@CODE: <li class="pagination--list--item prev"><a role="button" class="icon-prev" href="[+link+]"></a></li>`
+				|   &TplPrevI=`@CODE: <li class="pagination--list--item prev disabled"><span role="button" class="icon-prev"></span></li>`
+				|   &TplPage=`@CODE: <li class="pagination--list--item"><a role="button" href="[+link+]">[+num+]</a></li>`
+				|   &TplCurrentPage=`@CODE: <li class="pagination--list--item active"><span role="button">[+num+]</span></li>`
+				|   &TplDotsPage=`@CODE:<li class="pagination--list--item dots"><span role="button">...</span></li>`
+				|]]
+				|[+pages+]
+			|{{@FILE assets/templates/projectsoft/tpl/sites-link.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope.html}}
+		|{{@FILE assets/templates/projectsoft/tpl/yepnope-load.html}}
